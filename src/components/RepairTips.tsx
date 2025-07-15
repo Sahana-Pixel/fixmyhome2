@@ -1,4 +1,3 @@
-import React from 'react';
 import { FiZap, FiDroplet, FiFilter } from 'react-icons/fi';
 import Header from "../UI/Header";
 

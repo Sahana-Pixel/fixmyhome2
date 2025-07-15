@@ -5,7 +5,6 @@
     </span>
   </div> */}
 
-import React from 'react';
 import { FiArrowRight, FiClock, FiShield, FiTool, FiAward, FiAlertCircle, FiZap } from 'react-icons/fi';
 
 const Home = () => (
