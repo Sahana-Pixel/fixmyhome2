@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { 
   FiUser, FiTool, 
   FiCheckCircle, FiArrowRight, FiCalendar, 
-  FiClock, FiMapPin, FiDollarSign 
+  FiClock, FiMapPin,  
 } from 'react-icons/fi';
 import { BsFillLightningFill, BsShieldCheck } from 'react-icons/bs';
 import { IoMdPricetag } from 'react-icons/io';
@@ -100,9 +100,9 @@ const BookForm = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+<div className="flex justify-center">
           {/* Form Section */}
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700 hover:border-teal-400/30 transition-all duration-300 overflow-hidden p-6 sm:p-8">
+<div className="bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700 hover:border-teal-400/30 transition-all duration-300 overflow-hidden p-6 sm:p-8 max-w-3xl w-full">
             <form onSubmit={handleSubmit}>
               {currentStep === 1 && (
                 <div className="space-y-6">
@@ -442,63 +442,7 @@ const BookForm = () => {
           </div>
 
           {/* Benefits Section */}
-          <div className="space-y-6">
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700 p-6 hover:border-teal-400/30 transition-all duration-300">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 bg-gray-700 p-3 rounded-lg">
-                  <BsFillLightningFill className="text-2xl text-teal-400" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2">Priority Dispatch</h3>
-                  <p className="text-gray-400 text-sm">
-                    Emergency requests receive immediate attention with average response times under 45 minutes.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700 p-6 hover:border-teal-400/30 transition-all duration-300">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 bg-gray-700 p-3 rounded-lg">
-                  <FiDollarSign className="text-2xl text-teal-400" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2">Transparent Pricing</h3>
-                  <p className="text-gray-400 text-sm">
-                    Upfront estimates with no hidden fees. Price match guarantee on all services.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700 p-6 hover:border-teal-400/30 transition-all duration-300">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 bg-gray-700 p-3 rounded-lg">
-                  <BsShieldCheck className="text-2xl text-teal-400" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2">Full Protection</h3>
-                  <p className="text-gray-400 text-sm">
-                    All work comes with a 2-year warranty and $1M liability coverage for your peace of mind.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700 p-6 hover:border-teal-400/30 transition-all duration-300">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 bg-gray-700 p-3 rounded-lg">
-                  <FiCheckCircle className="text-2xl text-teal-400" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2">Satisfaction Guaranteed</h3>
-                  <p className="text-gray-400 text-sm">
-                    If you're not 100% satisfied, we'll make it right or your money back.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+        
         </div>
       </div>
 

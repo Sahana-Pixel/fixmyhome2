@@ -56,8 +56,8 @@ const TechniciansPage: React.FC = () => {
           />
         </div>
 
-        {/* Technicians Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+        {/* Technicians Grid - Changed this line only */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
           {technicians.map((tech, index) => (
             <div
               key={index}
@@ -126,10 +126,9 @@ const TechniciansPage: React.FC = () => {
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-gray-700/50 flex space-x-3">
-                
                   <button className="flex-1 py-2 px-4 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-lg transition-all duration-300 text-sm flex items-center justify-center">
-                     <a href="#book">
-                    Book Now
+                    <a href="#book">
+                      Book Now
                     </a>
                     <FiArrowRight className="ml-2" />
                   </button>

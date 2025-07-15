@@ -94,8 +94,8 @@ const ServicesPage: React.FC = () => {
     ];
 
     return (
-        <section id="services" className="py-16 px-4 sm:px-6 bg-gradient-to-b from-gray-900 to-gray-800">
-            <div className="max-w-7xl mx-auto">
+         <section id="services" className="py-16 px-4 sm:px-6 bg-gradient-to-b from-gray-900 to-gray-800">
+    <div className="max-w-7xl mx-auto">
                 {/* Header */}
 
                 <div>
@@ -110,18 +110,17 @@ const ServicesPage: React.FC = () => {
                 </div>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {services.map((service) => (
+ <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">                    {services.map((service) => (
                         <div
                             key={service.id}
                             className="relative bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700 hover:border-teal-400/30 transition-all duration-300 overflow-hidden group"
                         >
                             {/* Emergency badge */}
-                            {service.emergency && (
+                            {/* {service.emergency && (
                                 <div className="absolute top-4 right-4 bg-red-500/20 text-red-100 text-xs font-semibold px-2 py-1 rounded-full backdrop-blur-sm">
                                     Emergency
                                 </div>
-                            )}
+                            )} */}
 
                             <div className="p-6">
                                 <div className="flex items-start space-x-4">
@@ -157,8 +156,7 @@ const ServicesPage: React.FC = () => {
                 </div>
 
                 {/* CTA Section */}
-                <div className="mt-16 bg-gray-800/50 border border-gray-700 rounded-xl p-8 text-center">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+ <div className="mt-16 bg-gray-800/50 border border-gray-700 rounded-xl p-8 text-center">                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
                         Don't See What You Need?
                     </h3>
                     <p className="text-gray-300 max-w-2xl mx-auto mb-6">

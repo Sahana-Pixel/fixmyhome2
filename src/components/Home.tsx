@@ -1,10 +1,3 @@
-{/* <div className="inline-flex items-center px-3 py-1 rounded-full bg-teal-500/20 backdrop-blur-sm mb-2">
-    <FiAlertCircle className="mr-1.5 text-teal-400" size={14} />
-    <span className="text-xs font-semibold tracking-wide text-teal-100 uppercase">
-      24/7 Emergency Service
-    </span>
-  </div> */}
-
 import { FiArrowRight, FiClock, FiShield, FiTool, FiAward, FiAlertCircle, FiZap } from 'react-icons/fi';
 
 const Home = () => (
@@ -16,33 +9,10 @@ const Home = () => (
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-            {/* Hero content - Reversed order for mobile */}
-            <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-12 py-8 lg:py-12">
-                {/* Image first on mobile */}
-                <div className="w-full lg:w-1/2 relative group mt-6 lg:mt-0">
-                    <div className="relative rounded-2xl overflow-hidden border border-gray-700 bg-gray-800/50 backdrop-blur-sm aspect-video shadow-xl hover:shadow-2xl transition-all duration-300 transform group-hover:-translate-y-1">
-                        <img
-                            src="/images/repair.jpg"
-                            alt="Professional home repair technician working"
-                            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                            onError={(e) => {
-                                (e.target as HTMLImageElement).src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAwIiBoZWlnaD0iNTYyIiB2aWV3Qm94PSIwIDAgMTAwMCA1NjIiPjxyZWN0IHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjU2MiIgZmlsbD0iIzFmMjEzYiIvPjx0ZXh0IHg9IjUwMCIgeT0iMjgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiNlNGU2ZTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkhvbWUgUmVwYWlyIEltYWdlIFBsYWNlaG9sZGVyPC90ZXh0Pjwvc3ZnPg=='
-                            }}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent pointer-events-none"></div>
-                        <div className="absolute inset-0 rounded-2xl border-2 border-teal-400/20 m-1 pointer-events-none transition-all duration-300 group-hover:border-teal-400/40 group-hover:m-0.5"></div>
-                        <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6 text-white">
-                            <p className="text-xs sm:text-sm font-medium text-gray-300">24/7 Emergency Service</p>
-                            <h3 className="text-lg sm:text-xl font-bold mt-1">Certified Home Repair Experts</h3>
-                        </div>
-                    </div>
-                    <div className="absolute inset-0 rounded-2xl shadow-card opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" style={{
-                        background: 'radial-gradient(at center center, rgba(16, 185, 129, 0.4) 0%, transparent 70%)'
-                    }}></div>
-                </div>
-
-                {/* Text content - comes after image in DOM for mobile */}
-                <div className="w-full lg:w-1/2 space-y-6 lg:space-y-8 text-center lg:text-left">
+            {/* Hero content - Changed order for mobile */}
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 py-8 lg:py-12">
+                {/* Text content - comes first on mobile */}
+                <div className="w-full lg:w-1/2 space-y-6 lg:space-y-8 text-center lg:text-left order-2 lg:order-1">
                     <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-500/20 backdrop-blur-sm mx-auto lg:mx-0">
                         <FiZap className="mr-1.5 text-blue-300" size={14} />
                         <span className="text-xs font-semibold tracking-wide text-blue-100 uppercase">
@@ -72,9 +42,32 @@ const Home = () => (
                         </a>
                     </div>
                 </div>
+
+                {/* Image - comes second on mobile */}
+                <div className="w-full lg:w-1/2 relative group order-1 lg:order-2">
+                    <div className="relative rounded-2xl overflow-hidden border border-gray-700 bg-gray-800/50 backdrop-blur-sm aspect-video shadow-xl hover:shadow-2xl transition-all duration-300 transform group-hover:-translate-y-1">
+                        <img
+                            src="/images/repair.jpg"
+                            alt="Professional home repair technician working"
+                            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                            onError={(e) => {
+                                (e.target as HTMLImageElement).src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjU2MiIgdmlld0JveD0iMCAwIDEwMDAgNTYyIj48cmVjdCB3aWR0aD0iMTAwMCIgaGVpZ2h0PSI1NjIiIGZpbGw9IiMxZjIxM2IiLz48dGV4dCB4PSI1MDAiIHk9IjI4MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmaWxsPSIjZTRlNmU5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5Ib21lIFJlcGFpciBJbWFnZSBQbGFjZWhvbGRlcjwvdGV4dD48L3N2Zz4='
+                            }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent pointer-events-none"></div>
+                        <div className="absolute inset-0 rounded-2xl border-2 border-teal-400/20 m-1 pointer-events-none transition-all duration-300 group-hover:border-teal-400/40 group-hover:m-0.5"></div>
+                        <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6 text-white">
+                            <p className="text-xs sm:text-sm font-medium text-gray-300">24/7 Emergency Service</p>
+                            <h3 className="text-lg sm:text-xl font-bold mt-1">Certified Home Repair Experts</h3>
+                        </div>
+                    </div>
+                    <div className="absolute inset-0 rounded-2xl shadow-card opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" style={{
+                        background: 'radial-gradient(at center center, rgba(16, 185, 129, 0.4) 0%, transparent 70%)'
+                    }}></div>
+                </div>
             </div>
 
-            {/* Trust indicators - adjusted for mobile */}
+            {/* Trust indicators */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 py-8 sm:py-16">
                 {[
                     { icon: <FiClock size={24} className="sm:w-7" />, value: "24/7", label: "Availability" },
