@@ -30,7 +30,7 @@ const ContactPage = () => {
                   <h4 className="text-lg font-semibold text-white">Phone</h4>
                   <p className="text-gray-400">24/7 Emergency Service</p>
                   <a href="tel:+18005551234" className="text-teal-400 hover:text-teal-300 transition-colors block mt-1">
-                    +1 (800) 555-1234
+                    +91 9876543210
                   </a>
                 </div>
               </div>
@@ -56,9 +56,12 @@ const ContactPage = () => {
                   <h4 className="text-lg font-semibold text-white">Office</h4>
                   <p className="text-gray-400">Visit us during business hours</p>
                   <address className="text-gray-300 not-italic mt-1">
-                    123 Home Service Ave<br />
-                    Suite 200<br />
-                    San Francisco, CA 94107
+             
+
+                    123 Home Service Nagar<br />  
+2nd Floor, Suite 200 <br /> 
+Bengaluru, Karnataka 560001  
+India
                   </address>
                 </div>
               </div>

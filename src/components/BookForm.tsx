@@ -119,7 +119,7 @@ const BookForm = () => {
                       <input
                         type="text"
                         id="name"
-                        placeholder="John Doe"
+                        placeholder="Rohan"
                         className="w-full bg-gray-700/50 border border-gray-600 rounded-lg py-3 px-4 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -135,7 +135,7 @@ const BookForm = () => {
                         <input
                           type="tel"
                           id="phone"
-                          placeholder="(123) 456-7890"
+                          placeholder="+91 9876543210"
                           className="w-full bg-gray-700/50 border border-gray-600 rounded-lg py-3 px-4 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -362,7 +362,7 @@ const BookForm = () => {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Estimated Price:</span>
-                      <span className="text-teal-400 font-bold">$99 - $249</span>
+                      <span className="text-teal-400 font-bold">₹500-₹1000</span>
                     </div>
                   </div>
 
