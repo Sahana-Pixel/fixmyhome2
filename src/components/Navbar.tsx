@@ -1,5 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { FiHome, FiCalendar, FiTool, FiAlertCircle, FiBook, FiStar, FiMessageSquare, FiX, FiMenu, FiUserCheck } from 'react-icons/fi';
+import {
+  FiHome,
+  FiCalendar,
+  FiTool,
+  FiAlertCircle,
+  FiBook,
+  FiStar,
+  FiMessageSquare,
+  FiX,
+  FiMenu,
+  FiUserCheck,
+} from 'react-icons/fi';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -10,17 +21,17 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
-      
+
       // Section detection logic
       const sections = document.querySelectorAll('section[id]');
-      sections.forEach(section => {
+      sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
         if (rect.top <= 100 && rect.bottom >= 100) {
           setActiveSection(section.id);
         }
       });
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -40,22 +51,28 @@ const Navbar: React.FC = () => {
     { id: 'technicians', label: 'Technician', icon: <FiUserCheck size={18} /> },
     { id: 'tips', label: 'Tips', icon: <FiBook size={18} /> },
     { id: 'reviews', label: 'Reviews', icon: <FiStar size={18} /> },
-    { id: 'contact', label: 'Contact', icon: <FiMessageSquare size={18} /> }
+    { id: 'contact', label: 'Contact', icon: <FiMessageSquare size={18} /> },
   ];
 
   return (
     <>
       {/* Main Navbar */}
-      <nav className={`fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm z-50 border-b transition-all duration-300 ${
-        mobileMenuOpen ? 'border-teal-500/20' : scrolled ? 'border-gray-800 shadow-lg' : 'border-transparent'
-      }`}>
+      <nav
+        className={`fixed top-0 w-full bg-black/95 backdrop-blur-sm z-50 border-b transition-all duration-300 ${
+          mobileMenuOpen
+            ? 'border-yellow-800/40'
+            : scrolled
+            ? 'border-gray-800 shadow-lg'
+            : 'border-transparent'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-6">
           <div className="relative flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <FiHome className="h-6 w-6 text-teal-400" />
+              <FiHome className="h-6 w-6 text-yellow-600" />
               <span className="ml-2 text-xl font-semibold text-gray-100">
-                <span className="text-teal-400">Fix</span>MyHome
+                <span className="text-yellow-600">Fix</span>MyHome
               </span>
             </div>
 
@@ -70,17 +87,19 @@ const Navbar: React.FC = () => {
                     onMouseLeave={() => setIsHovering(false)}
                     className={`px-3 py-2 flex items-center text-sm font-medium transition-colors relative group ${
                       activeSection === item.id && !isHovering
-                        ? 'text-teal-400'
-                        : 'text-gray-300 hover:text-teal-400'
+                        ? 'text-yellow-600'
+                        : 'text-gray-300 hover:text-yellow-600'
                     }`}
                   >
                     {item.icon}
                     <span className="ml-2">{item.label}</span>
-                    <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-teal-500 rounded-full transition-all duration-300 ${
-                      activeSection === item.id && !isHovering
-                        ? 'scale-x-100'
-                        : 'scale-x-0 group-hover:scale-x-100'
-                    }`}></span>
+                    <span
+                      className={`absolute bottom-0 left-0 w-full h-0.5 bg-yellow-700 rounded-full transition-all duration-300 ${
+                        activeSection === item.id && !isHovering
+                          ? 'scale-x-100'
+                          : 'scale-x-0 group-hover:scale-x-100'
+                      }`}
+                    ></span>
                   </button>
                 ))}
               </div>
@@ -88,9 +107,9 @@ const Navbar: React.FC = () => {
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center">
-              <button 
+              <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-gray-300 hover:text-teal-400 focus:outline-none"
+                className="text-gray-300 hover:text-yellow-600 focus:outline-none"
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -101,11 +120,14 @@ const Navbar: React.FC = () => {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden fixed inset-0 z-40 bg-gray-900/95 backdrop-blur-sm transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
-        mobileMenuOpen ? 
-          'translate-y-0 scale-100 opacity-100' : 
-          '-translate-y-full scale-95 opacity-0'
-      }`} style={{ paddingTop: '4.5rem' }}>
+      <div
+        className={`md:hidden fixed inset-0 z-40 bg-black/95 backdrop-blur-sm transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
+          mobileMenuOpen
+            ? 'translate-y-0 scale-100 opacity-100'
+            : '-translate-y-full scale-95 opacity-0'
+        }`}
+        style={{ paddingTop: '4.5rem' }}
+      >
         <div className="flex flex-col items-center space-y-4 py-6 px-6">
           {navItems.map((item) => (
             <button
@@ -113,8 +135,8 @@ const Navbar: React.FC = () => {
               onClick={() => scrollToSection(item.id)}
               className={`w-full py-4 px-6 flex items-center text-lg font-medium rounded-xl transition-all duration-200 ${
                 activeSection === item.id
-                  ? 'text-teal-400 bg-gray-800'
-                  : 'text-gray-200 hover:text-teal-400 hover:bg-gray-800'
+                  ? 'text-yellow-600 bg-gray-800'
+                  : 'text-gray-200 hover:text-yellow-600 hover:bg-gray-800'
               }`}
             >
               {item.icon}
@@ -126,7 +148,7 @@ const Navbar: React.FC = () => {
 
       {/* Overlay */}
       {mobileMenuOpen && (
-        <div 
+        <div
           className="fixed inset-0 z-30 bg-black/50 backdrop-blur-sm md:hidden"
           onClick={() => setMobileMenuOpen(false)}
         />

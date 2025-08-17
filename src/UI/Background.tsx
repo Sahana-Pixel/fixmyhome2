@@ -8,7 +8,7 @@ interface BackgroundProps {
 
 const Background = ({ children, className = "" }: BackgroundProps) => {
   return (
-    <div className={`bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-6 rounded-2xl shadow-lg ${className}`}>
+    <div className={`bg-gradient-to-br from-green-800 via-green-800 to-green-900 p-6 rounded-2xl shadow-lg ${className}`}>
       {children}
     </div>
   );
